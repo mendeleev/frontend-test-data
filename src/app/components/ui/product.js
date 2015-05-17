@@ -7,9 +7,10 @@ define(
   [
     'flight/component',
     'jquery',
-    'components/mixin/withTemplateSet'
+    'components/mixin/withTemplateSet',
+    'components/ui/form/number'
   ],
-  function(defineComponent, $, withTemplateSet) {
+  function(defineComponent, $, withTemplateSet, number) {
     return defineComponent(Product, withTemplateSet);
 
     function Product() {
@@ -25,6 +26,7 @@ define(
 
       this.after('initialize', function() {
         this.on('changeProduct', function(event, data) {
+          number.attachTo(this.node, {max: data.product.quantity});
           this.setProduct(data.product);
         }.bind(this));
 

@@ -23,11 +23,13 @@ define(
 
       this.setGallery = function(data) {
         var template = bt(this.attr.thumbnail).createInstance();
-        this.attr.template.set('mainPhoto', data.images[0]);
+        this.attr.template.set(
+          'mainPhoto',
+          ['images', data.id, data.images[0]].join('/')
+        );
 
         if(data.images.length > 1) {
           for(var i = 1; i < data.images.length; i++) {
-            console.log(data.images[i]);
             template.set('gallery_id', data.id);
             template.set('photo', data.images[i]);
             this.select('container').append(
