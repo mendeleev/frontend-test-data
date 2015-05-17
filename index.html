@@ -11,45 +11,77 @@
 <body>
 
 <div class="container">
-    <header>
-        <div class="filter">
-            <span class="label">Please choose your category:</span>
-            <nav class="categories">
-                <ul>
-                    <li><a href="#">Category #1</a></li>
-                    <li><a href="#">Category #2</a></li>
-                    <li><a href="#">Category #3</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="filter">
-            <span class="label">Sort by:</span>
-            <select name="sort_by" id="sortBy">
-                <option value="0">none</option>
-                <option value="1">price asc</option>
-                <option value="2">price desc</option>
-            </select>
-        </div>
-    </header>
-
     <aside class="cart">
         <div>
             <div class="cartHeadline">
-                <h4>Shopping Cart</h4>
-                <span class="amount">2</span>
+                <div class="itemsInCart">
+                    <div class="amount">
+                        <span class="count">2</span>
+                    </div>
+                </div>
+                <h4>Shopping Cart</h4>                
             </div>
             <ul class="cartItems">
-                <li class="item">Xiaomi band <input type="text" class="amount" /> $ 111</li>
-                <li class="item">Xiaomi band <input type="text" class="amount" /> $ 234</li>
-                <li class="item">Xiaomi band <input type="text" class="amount" /> $ 567</li>
+                <li class="item">Xiaomi band 
+                    <div class="number">
+                        <input type="text" class="amount" value="1" />
+                        <div>
+                            <button class="up"></button>
+                            <button class="down"></button>
+                        </div> 
+                    </div> $ 111
+                </li>
+                <li class="item">Xiaomi band 
+                    <div class="number">
+                        <input type="text" class="amount" value="1" />
+                        <div>
+                            <button class="up"></button>
+                            <button class="down"></button>
+                        </div> 
+                    </div> $ 111
+                </li>
+                <li class="item">Xiaomi band 
+                    <div class="number">
+                        <input type="text" class="amount" value="1" />
+                        <div>
+                            <button class="up"></button>
+                            <button class="down"></button>
+                        </div> 
+                    </div> $ 111
+                </li>
                 <li class="total">$ 999</li>
             </ul>
 
         </div>
     </aside>
 
-    <div class="items">
+    <div class="content">
+        <div class="filters">
+            <form action="#" method="get" id="filters">
+                <div class="filter">
+                    <span class="label">Please choose your category:</span>
+                    <input type="hidden" name="category_id" />
+                    <nav class="categories">
+                        <ul>
+                            <li><a href="#">Category #1</a></li>
+                            <li><a href="#">Category #2</a></li>
+                            <li><a href="#">Category #3</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="filter">
+                    <span class="label">Sort by:</span>
+                    <select name="sort_by" id="sortBy">
+                        <option value="0">none</option>
+                        <option value="1">price asc</option>
+                        <option value="2">price desc</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        
+
         <figure class="item">
             <img width="100%" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt="" />
             <ul class="gallery">
@@ -59,18 +91,27 @@
             </ul>
 
             <div class="description">
-                <h3>Lorem Ipsum</h3>
+                <h3><a href="#">Xiaomi band 2</a></h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             </div>
 
-            <input type="text" class="amount" /> <button class="addToCart">$ 123</button>
+            <div class="buyBlock">
+                <div class="number">
+                    <input type="text" class="amount" value="1" />
+                    <div>
+                        <button class="up"></button>
+                        <button class="down"></button>
+                    </div> 
+                </div>
+                <div class="addToCart">
+                    <span class="price">$ 1293</span>
+                    <button class="buy"></button>
+                </div>
+            </div>
+            
 
         </figure>
     </div>
-
-    <footer>
-        <p>Copyright 2009 Your name</p>
-    </footer>
 </div>
 
 </body>
