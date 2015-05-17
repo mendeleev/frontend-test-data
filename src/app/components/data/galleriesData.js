@@ -18,16 +18,25 @@ define(
         apiUrl: "data/galleries.json"
       });
 
-      this.getGalleries = function () {
-        return $.ajax({
-          url: this.attr.apiUrl,
-          method: "get"
+      this.getGallery = function (galleryId) {
+        return $.ajax({url: this.attr.apiUrl}).then(function(data) {
+          var result = {};
+          for(var i = 0; i < data.galleries.length; i++) {
+            if(data.galleries[i].id === galleryId) {
+              result = data.galleries[i];
+              break;
+            }
+          }
+
+          return result;
         });
       };
 
       this.after('initialize', function () {
-        this.getGalleries().then(function (data) {
-          this.trigger('dataChanged', data);
+        this.on('changeGallery', function(event, params) {
+          this.getGallery(params.galleryId).then(function(data) {
+            this.trigger('galleryChanged', data);
+          }.bind(this));
         }.bind(this));
       });
     }

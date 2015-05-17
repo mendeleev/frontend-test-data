@@ -11,9 +11,11 @@ define(
     'jquery',
     'basisTemplates',
     'components/data/productsData',
+    'components/ui/product',
+    'components/ui/gallery',
     'components/mixin/withTemplateSet'
   ],
-  function(defineComponent, $, basis, productsData, withTemplateSet) {
+  function(defineComponent, $, basis, productsData, product, gallery, withTemplateSet) {
     return defineComponent(Products, withTemplateSet);
 
     function Products() {
@@ -22,26 +24,35 @@ define(
       });
 
       this.setProducts = function(data) {
-        var template = bt(this.attr.template).createInstance();
+        var template;
         this.$node.empty();
 
-        console.log("tmpl", template);
-
         for(var i = 0; i < data.length; i++) {
-          this.$node.append(
-            $(this.setTemplate(template, data[i])).clone()
-          );
+          template = bt(this.attr.template).createInstance();
+          product.attachTo(template.element, {
+            template: template,
+            container: this.$node
+          });
+          gallery.attachTo(template.element, {
+            template: template
+          });
+          this.trigger(template.element, 'changeProduct', {product: data[i]});
         }
       };
 
       this.after('initialize', function() {
 
-        this.on('dataChanged', function(event, data) {
-          console.log(data);
-          this.setProducts(data.products);
+        this.on('changeProducts', function(event, params) {
+          this.trigger('changeData', params);
+          this.on('dataChanged', function(event, data) {
+            this.setProducts(data.products);
+          }.bind(this));
+
         }.bind(this));
 
         productsData.attachTo(this.node);
+
+        this.trigger('changeProducts', {});
 
       });
     }

@@ -18,13 +18,39 @@ define(
         apiUrl: "data/products.json"
       });
 
-      this.getProducts = function() {
-        return $.ajax({url:this.attr.apiUrl});
+      /**
+       *
+       * @returns {*}
+       */
+      this.getProducts = function(categoryId) {
+        return $.ajax({url:this.attr.apiUrl}).then(function(data) {
+          var result = [];
+          if(categoryId) {
+            for(var i = 0; i < data.products.length; i++) {
+              if(data.products[i].category_id === categoryId) {
+                result.push(data.products[i]);
+              }
+            }
+          } else {
+            result = data.products;
+          }
+
+          return {products: result};
+        });
       };
 
       this.after('initialize', function() {
-        this.getProducts().then(function(data) {
-          this.trigger('dataChanged', data);
+        /**
+         * listen event for changing data
+         */
+        this.on('changeData', function(event, params) {
+          /**
+           * load products data
+           */
+          this.getProducts(params.category_id).then(function(data) {
+            this.trigger('dataChanged', data);
+          }.bind(this));
+
         }.bind(this));
       })
     }

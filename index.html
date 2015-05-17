@@ -85,14 +85,16 @@
 
         </div>
 
+        <script id="thumbnailTemplate" type="text/basis-template">
+            <li>
+                <img width="50px" src="images/{gallery_id}/{photo}" alt=""/>
+            </li>
+        </script>
+
         <script id="productTemplate" type="text/basis-template">
             <figure class="item" data-id="{id}">
-                <img width="100%" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt="" />
-                <ul class="gallery">
-                    <li><img width="50px" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt=""/></li>
-                    <li><img width="50px" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt=""/></li>
-                    <li><img width="50px" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt=""/></li>
-                </ul>
+                <img width="100%" class="mainPhoto" src="images/{gallery_id}/{mainPhoto}" alt="" />
+                <ul class="gallery"></ul>
 
                 <div class="description">
                     <h3><a href="#">{title}</a></h3>

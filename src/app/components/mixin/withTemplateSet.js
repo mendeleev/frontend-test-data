@@ -9,11 +9,18 @@ define(
   [],
   function() {
     return function() {
+      /**
+       * Set object fields and values to template
+       *
+       * @param template
+       * @param data
+       * @returns {*}
+       */
       this.setTemplate = function(template, data) {
         for(var name in data) {
           template.set(name, data[name]);
         }
-        return template ? template.element : null;
+        return template ? template.element : {};
       }
     }
   }
