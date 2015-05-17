@@ -55,18 +55,18 @@
         </div>
     </aside>
 
+    <script id="categoryTemplate" type="text/basis-template">
+        <li data-id="{id}"><a href="#">{title}</a></li>
+    </script>
+
     <div class="content">
         <div class="filters">
-            <form action="#" method="get" id="filters">
-                <div class="filter">
+            <form action="#" method="get">
+                <div class="filter" id="categories">
                     <span class="label">Please choose your category:</span>
                     <input type="hidden" name="category_id" />
                     <nav class="categories">
-                        <ul>
-                            <li><a href="#">Category #1</a></li>
-                            <li><a href="#">Category #2</a></li>
-                            <li><a href="#">Category #3</a></li>
-                        </ul>
+                        <ul></ul>
                     </nav>
                 </div>
 
@@ -80,40 +80,46 @@
                 </div>
             </form>
         </div>
-        
 
-        <figure class="item">
-            <img width="100%" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt="" />
-            <ul class="gallery">
-                <li><img width="50px" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt=""/></li>
-                <li><img width="50px" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt=""/></li>
-                <li><img width="50px" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt=""/></li>
-            </ul>
+        <div id="products">
 
-            <div class="description">
-                <h3><a href="#">Xiaomi band 2</a></h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div>
+        </div>
 
-            <div class="buyBlock">
-                <div class="number">
-                    <input type="text" class="amount" value="1" />
-                    <div>
-                        <button class="up"></button>
-                        <button class="down"></button>
-                    </div> 
+        <script id="productTemplate" type="text/basis-template">
+            <figure class="item" data-id="{id}">
+                <img width="100%" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt="" />
+                <ul class="gallery">
+                    <li><img width="50px" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt=""/></li>
+                    <li><img width="50px" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt=""/></li>
+                    <li><img width="50px" src="images/03c963488980434cbc1f9d9563b36564/2015-new-men-s-business-long-sleeved-dress-shirt-color-twill-jacquard-occupation-square-white-shirt (1).jpg" alt=""/></li>
+                </ul>
+
+                <div class="description">
+                    <h3><a href="#">{title}</a></h3>
+                    <p>{description}</p>
                 </div>
-                <div class="addToCart">
-                    <span class="price">$ 1293</span>
-                    <button class="buy"></button>
-                </div>
-            </div>
-            
 
-        </figure>
+                <div class="buyBlock">
+                    <div class="number">
+                        <input type="text" class="amount" value="1" />
+                        <div>
+                            <button class="up"></button>
+                            <button class="down"></button>
+                        </div>
+                    </div>
+                    <div class="addToCart">
+                        <span class="price">$ {price}</span>
+                        <button class="buy"></button>
+                    </div>
+                </div>
+
+
+            </figure>
+        </script>
     </div>
 </div>
 
+<script data-main="src/app/main" src="lib/requirejs/require.js"></script>
 </body>
 
 </html>
