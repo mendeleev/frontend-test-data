@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+.amount {
+    width: 40px;
+}
+
+.container {
+    width:960px;
+    margin:0 auto;
+    margin-top:100px;
+}
+
+.categories {
+    list-style: none;
+}
+
+    .categories li {
+        float: left;
+        list-style: none;
+        margin-right: 10px;
+    }
+
+    .categories li a {
+
+    }
+
+.label {
+    float: left;
+    padding-right: 5px;
+}
+
+.filter {
+    overflow: hidden;
+}
+
+.cart {
+    width:250px;
+    border:1px solid #ccc;
+    float:right;
+}
+
+.cartHeadline {
+    padding:10px;
+}
+
+    .cartHeadline .amount {
+        background: green;
+        display: block;
+        text-align: center;
+        line-height: 22px;
+        color:#fff;
+        width:20px;
+        height:20px;
+        border-radius:20px;
+    }
+
+.cartItems {
+    list-style: none;
+    border-top: 1px solid #ccc;
+}
+
+    .cartItems .item {
+        padding: 5px 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .cartItems .total {
+        text-align: right;
+        padding:10px;
+    }
+
+.items {
+    overflow:hidden;
+}
+
+
+/*gallery*/
+figure.item {
+    float:left;
+    width:250px;
+    border: 1px solid #ccc;
+    margin:15px;
+    padding-bottom:10px;
+}
+
+figure.item .description {
+    padding:10px;
+}
+
+.gallery {
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+}
+
+    .gallery li {
+        display: inline-block;
+        cursor: pointer;
+    }
