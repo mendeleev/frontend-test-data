@@ -1,3 +1,26 @@
+Demo
+--------------------
+http://mendeleev.github.io/eshop/
+
+Installation
+--------------------
+checkout project.
+``` bash
+git clone https://github.com/mendeleev/frontend-test-data
+```
+
+install bower
+``` bash
+npm install -g bower
+```
+
+run bower for downloading libraries
+``` bash
+bower install
+```
+
+> Notice! This project should be runned via http-server because of using http-requests for getting data
+
 Frontend test
 ===========
 You should create simple shopping basket prototype. All data needed to complete this goal is presented in the current repository.
@@ -77,3 +100,11 @@ Requirements
 - All sources should be committed to public source repository, such as: http://github.com, http://bitbucket.org, etc
 - HTML5 doctype should be used
 - Feel free to use 3rd party libraries and frameworks (like jQuery, backbone, sass etc... )
+
+@todo
+-----------------
+- Fix markup issues
+- Fix sort_by desc
+- Implement gallery carousel
+- Refactor css styles with Sass
+- Fix IE features
