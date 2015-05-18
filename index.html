@@ -10,9 +10,21 @@
 
 <body>
 
+<script id="cartItemTemplate" type="text/basis-template">
+    <li class="item">{title}
+        <div class="number">
+            <input type="text" class="amount" value="{count}" data-id="{id}" />
+            <div>
+                <button class="up"></button>
+                <button class="down"></button>
+            </div>
+        </div> $ {price}
+    </li>
+</script>
+
 <div class="container">
     <aside class="cart">
-        <div>
+        <div id="shoppingCart">
             <div class="cartHeadline">
                 <div class="itemsInCart">
                     <div class="amount">
@@ -22,35 +34,9 @@
                 <h4>Shopping Cart</h4>                
             </div>
             <ul class="cartItems">
-                <li class="item">Xiaomi band 
-                    <div class="number">
-                        <input type="text" class="amount" value="1" />
-                        <div>
-                            <button class="up"></button>
-                            <button class="down"></button>
-                        </div> 
-                    </div> $ 111
-                </li>
-                <li class="item">Xiaomi band 
-                    <div class="number">
-                        <input type="text" class="amount" value="1" />
-                        <div>
-                            <button class="up"></button>
-                            <button class="down"></button>
-                        </div> 
-                    </div> $ 111
-                </li>
-                <li class="item">Xiaomi band 
-                    <div class="number">
-                        <input type="text" class="amount" value="1" />
-                        <div>
-                            <button class="up"></button>
-                            <button class="down"></button>
-                        </div> 
-                    </div> $ 111
-                </li>
-                <li class="total">$ 999</li>
             </ul>
+
+            <div class="total">$ <span>0</span></div>
 
         </div>
     </aside>

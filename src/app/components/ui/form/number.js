@@ -24,6 +24,7 @@ define(
         this.select('input').val(
           value < this.attr.max ? value += 1 : value
         );
+        this.select('input').trigger('change');
       };
 
       this.decrease = function() {
@@ -31,6 +32,7 @@ define(
         this.select('input').val(
           value >0 ? value -= 1 : value
         );
+        this.select('input').trigger('change');
       };
 
       this.after('initialize', function() {
