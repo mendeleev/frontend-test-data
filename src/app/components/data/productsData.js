@@ -49,7 +49,7 @@ define(
               return 0;
             });
             break;
-          case 1:
+          case 2:
             result = data.sort(function(a, b) {
               if(b.price > a.price) return 1;
               if(b.price < a.price) return -1;

@@ -199,9 +199,10 @@ aside {
         border-bottom: 2px solid #e6d43e;
     }
 
-    .cartItems .total {
+    .total {
         text-align: right;
         padding:10px;
+        display: block;
     }
 
 .content {
@@ -238,9 +239,20 @@ figure.item .description {
     margin:15px 0;
 }
 
-figure.item .number {
-    
+.mainPhoto {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    text-align: center;
+    position:relative;
 }
+
+.mainPhoto img {
+    height: 210px;
+    margin:0 auto;
+}
+
+
 
 .buyBlock {
     display: inline-block;
@@ -310,4 +322,8 @@ figure.item .number {
         display: inline-block;
         cursor: pointer;
         border:1px solid #c6c6c6;
+        width:50px;
+        height:50px;
+        margin:3px;
+        overflow: hidden;
     }

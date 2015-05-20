@@ -58,8 +58,10 @@ define(
 
       this.after('initialize', function() {
         this.on('addItem', function(e, data) {
-          this.addItem(data);
-          this.trigger('cartDataChanged', this.getData());
+          if(data.count > 0) {
+            this.addItem(data);
+            this.trigger('cartDataChanged', this.getData());
+          }
         });
 
         this.on('removeItem', function(e, data) {
