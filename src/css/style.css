@@ -327,3 +327,7 @@ figure.item .description {
         margin:3px;
         overflow: hidden;
     }
+
+    .gallery li img {
+        height:50px;
+    }

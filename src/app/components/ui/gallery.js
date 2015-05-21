@@ -18,7 +18,7 @@ define(
         thumbnail: "id:thumbnailTemplate",
         container: ".gallery",
         item: ".gallery li",
-        mainPhoto: ".mainPhoto"
+        mainPhoto: ".mainPhoto img"
       });
 
       this.setGallery = function(data) {

@@ -58,7 +58,7 @@ define(
         $(this.attr.sortBy).on('change', function(e) {
           sortBy = Number($(e.target).val());
           this.trigger($(this.attr.products), 'changeProducts', {
-            category_id:$(event.target).data('id'),
+            category_id:$(e.target).data('id'),
             sortBy: sortBy
           });
         }.bind(this));
