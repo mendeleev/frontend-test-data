@@ -47,6 +47,12 @@
   .cartItems {
     list-style: none;
     border-top: 2px solid $yellowLine;
+  }
+
+  .item {
+    position: relative;
+    padding: 5px 10px;
+    border-bottom: 2px solid $yellowLine;
 
     .title {
       font-size:9pt;
@@ -56,11 +62,14 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-  }
 
-  .item {
-    padding: 5px 10px;
-    border-bottom: 2px solid $yellowLine;
+    .icon {
+      display: none;
+    }
+
+    &:hover .icon {
+      display: block;
+    }
   }
 
   .total {

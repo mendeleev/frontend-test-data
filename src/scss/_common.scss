@@ -1,5 +1,11 @@
+body {
+  position: relative;
+  min-height: 100%;
+}
+
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
@@ -14,7 +20,11 @@ button {
   display: none;
 }
 
+header {
+  height:80px;
+}
+
 aside {
-  width:215px;
   float:right;
+  width:215px;
 }

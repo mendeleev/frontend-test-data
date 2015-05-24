@@ -9,6 +9,16 @@
 </head>
 
 <body>
+<div class="imageView hide" id="imageView">
+    <figure class="imageContainer">
+        <a class="icon icon-delete"></a>
+        <div class="image">
+            <a class="prev"></a>
+            <a class="next"></a>
+            <img src="" alt=""/>
+        </div>
+    </figure>
+</div>
 
 <script id="cartItemTemplate" type="text/basis-template">
     <li class="item">
@@ -19,11 +29,14 @@
                 <button class="up"></button>
                 <button class="down"></button>
             </div>
-        </div> $ {price}
+        </div>
+        <a class="icon icon-delete" data-id="{id}"></a>
+        <span>$ {price}</span>
     </li>
 </script>
 
 <div class="container">
+    <header></header>
     <aside class="cart">
         <div id="shoppingCart">
             <div class="cartHeadline">
@@ -73,7 +86,7 @@
 
         <script id="thumbnailTemplate" type="text/basis-template">
             <li>
-                <img src="images/{gallery_id}/{photo}" alt=""/>
+                <img src="{photo}" data-index="{index}" alt=""/>
             </li>
         </script>
 
@@ -86,7 +99,7 @@
                     <ul class="gallery"></ul>
 
                     <div class="description">
-                        <h3><a href="#">{title}</a></h3>
+                        <h3 class="title"><a href="#">{title}</a></h3>
                         <p>{description}</p>
                     </div>
 

@@ -22,6 +22,10 @@ define(
         amount: ".amount"
       });
 
+      /**
+       * set product data to the template
+       * @param data
+       */
       this.setProduct = function(data) {
         this.setTemplate(this.attr.template, data);
         this.attr.container.append(this.node);
@@ -30,14 +34,24 @@ define(
       this.after('initialize', function() {
         var currentProduct;
 
+        /**
+         * changeProduct event listener
+         */
         this.on('changeProduct', function(event, data) {
           currentProduct = data.product;
           number.attachTo(this.node, {max: data.product.quantity});
           this.setProduct(data.product);
         }.bind(this));
 
+        /**
+         * clicks listener
+         */
         this.on('click', {
+          /**
+           * add to cart button listener
+           */
           buy: function() {
+            /*add item to the shopping cart*/
             this.trigger($(this.attr.shoppingCart), 'addItem', {
               id: currentProduct.id,
               count: Number(this.select('amount').val()),
