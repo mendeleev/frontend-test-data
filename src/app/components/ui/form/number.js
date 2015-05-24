@@ -51,6 +51,12 @@ define(
               break;
           }
         }.bind(this));
+
+        this.on('change', function(e) {
+          if($(e.target).val() > this.attr.max) {
+            $(e.target).val(this.attr.max)
+          }
+        }.bind(this));
       });
     }
   }
