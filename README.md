@@ -2,6 +2,9 @@ Demo
 --------------------
 http://mendeleev.github.io/eshop/
 
+updated and fixed version
+http://mendeleev.github.io/eshop/v2/
+
 Installation
 --------------------
 checkout project.
