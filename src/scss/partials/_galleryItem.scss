@@ -3,7 +3,8 @@
 
 $buttonHeight: 35px;
 
-$whiteTransparent: rgba(255,255,255,0), rgba(255,255,255,1);
+$outGradient: $white, $bgCart;
+$whiteTransparent: transparent, white;
 $greenGradient: $grGreenLight, $grGreen;
 $invGreenGradient: $grGreen, $grGreenLight;
 
@@ -138,6 +139,18 @@ figure {
 
     &:active {
       background: $grGreenLight;
+    }
+  }
+
+  .out {
+    @include linear-gradient($outGradient);
+
+    &:hover {
+      box-shadow: 1px 1px 8px $bgCart;
+    }
+
+    &:active {
+      background: $bgCart;
     }
   }
 

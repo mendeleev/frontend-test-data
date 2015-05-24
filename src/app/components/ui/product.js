@@ -18,6 +18,7 @@ define(
         template: {},
         container: {},
         buy: ".buy",
+        out: ".out",
         shoppingCart: "#shoppingCart",
         amount: ".amount"
       });
@@ -27,6 +28,10 @@ define(
        * @param data
        */
       this.setProduct = function(data) {
+        if(data.quantity < 1) {
+          this.select('amount').val(0).attr('disabled', true);
+          this.select('buy').addClass(this.attr.out.replace('.', ''));
+        }
         this.setTemplate(this.attr.template, data);
         this.attr.container.append(this.node);
       };
