@@ -11,7 +11,8 @@
 <body>
 
 <script id="cartItemTemplate" type="text/basis-template">
-    <li class="item">{title}
+    <li class="item">
+        <span class="title">{title}</span>
         <div class="number">
             <input type="text" class="amount" value="{count}" data-id="{id}" />
             <div>
@@ -36,7 +37,7 @@
             <ul class="cartItems">
             </ul>
 
-            <div class="total">$ <span>0</span></div>
+            <div class="total">$ <strong>0</strong></div>
 
         </div>
     </aside>
@@ -68,6 +69,7 @@
         </div>
 
         <div id="products"></div>
+        <div style="clear: both;"></div>
 
         <script id="thumbnailTemplate" type="text/basis-template">
             <li>
@@ -77,30 +79,31 @@
 
         <script id="productTemplate" type="text/basis-template">
             <figure class="item" data-id="{id}">
-                <div class="mainPhoto">
-                    <img src="{mainPhoto}" alt="" />
-                </div>
-                <ul class="gallery"></ul>
+                <div class="itemContainer">
+                    <div class="mainPhoto">
+                        <img src="{mainPhoto}" alt="" />
+                    </div>
+                    <ul class="gallery"></ul>
 
-                <div class="description">
-                    <h3><a href="#">{title}</a></h3>
-                    <p>{description}</p>
-                </div>
+                    <div class="description">
+                        <h3><a href="#">{title}</a></h3>
+                        <p>{description}</p>
+                    </div>
 
-                <div class="buyBlock">
-                    <div class="number">
-                        <input type="text" class="amount" value="1" />
-                        <div>
-                            <button class="up"></button>
-                            <button class="down"></button>
+                    <div class="buyBlock">
+                        <div class="number">
+                            <input type="text" class="amount" value="1" />
+                            <div>
+                                <button class="up"></button>
+                                <button class="down"></button>
+                            </div>
+                        </div>
+                        <div class="addToCart">
+                            <span class="price">$ {price}</span>
+                            <button class="buy"></button>
                         </div>
                     </div>
-                    <div class="addToCart">
-                        <span class="price">$ {price}</span>
-                        <button class="buy"></button>
-                    </div>
                 </div>
-
 
             </figure>
         </script>

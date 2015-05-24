@@ -21,7 +21,8 @@ define(
         container: ".categories ul",
         item: ".categories li",
         products: "#products",
-        sortBy: "#sortBy"
+        sortBy: "#sortBy",
+        categoryEl: "[name=category_id]"
       });
 
       this.setCategories = function(data) {
@@ -46,8 +47,9 @@ define(
         this.on('click', {
           item: function(event) {
             category = $(event.target).data('id');
+            this.select('categoryEl').val(category);
             this.trigger($(this.attr.products), 'changeProducts', {
-              category_id:$(event.target).data('id'),
+              category_id:category,
               sortBy: sortBy
             });
             this.select('item').find('a').removeClass('active');
@@ -58,7 +60,7 @@ define(
         $(this.attr.sortBy).on('change', function(e) {
           sortBy = Number($(e.target).val());
           this.trigger($(this.attr.products), 'changeProducts', {
-            category_id:$(e.target).data('id'),
+            category_id:category,
             sortBy: sortBy
           });
         }.bind(this));

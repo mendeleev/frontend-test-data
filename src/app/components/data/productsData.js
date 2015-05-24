@@ -68,6 +68,7 @@ define(
          * listen event for changing data
          */
         this.on('changeData', function(event, params) {
+          console.log(params);
           /**
            * load products data
            */

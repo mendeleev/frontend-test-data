@@ -20,7 +20,7 @@ define(
         template: "id:cartItemTemplate",
         shoppingCart: "#shoppingCart",
         count: ".count",
-        total: ".total span"
+        total: ".total strong"
       });
 
       this.render = function(data) {
